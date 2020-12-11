@@ -3282,8 +3282,8 @@ tableau_auth = TSC.TableauAuth('username', 'password')
 server = TSC.Server('https://servername')
 
 with server.auth.sign_in(tableau_auth):
-    all_views, pagination_item = server.views.get_by_id('d79634e1-6063-4ec9-95ff-50acbf609ff5')
-    print([view.name for view in all_views])
+    view = server.view.get_by_id('d79634e1-6063-4ec9-95ff-50acbf609ff5')
+    print(view.name)
 ```
 
 See [ViewItem class](#viewitem-class)
